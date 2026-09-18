@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BigBurger: Encuentra lo que quieres comer justo aquí.">
+    <title>BigBurger</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍔</text></svg>">
+</head>
+<body>
+    <!-- 1. BARRA SUPERIOR (NAVBAR) -->
+    <header class="glass navbar">
+        <div class="container navbar-content">
+            <a href="#" class="logo">Big<span class="text-accent">Burger</span></a>
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#menu">Productos</a>
+                <a href="#info">Información</a>
+            </nav>
+            <button id="cart-btn" aria-label="Abrir carrito">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. HERO SECTION -->
+        <section id="inicio" class="hero">
+            <img src="https://i.pinimg.com/1200x/9d/a3/5f/9da35fb2f88c4d251a8fcd0d81b8296d.jpg" alt="Hero Background" class="hero-bg">
+            <div class="container hero-content glass">
+                <h1>Bienvenido a <span class="text-accent">BigBurger</span></h1>
+                <p>Encuentra lo que quieres comer justo aquí.</p>
+                <a href="#menu" class="btn-primary">Ver Productos</a>
+            </div>
+        </section>
+
+        <!-- 3. BARRA DE INFORMACIÓN (CARRUSEL) -->
+        <section class="carousel-section">
+            <div class="carousel-track" id="carousel-track">
+                <div class="carousel-item glass">
+                    <svg class="carousel-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0a815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    Envíos gratis en la zona local
+                </div>
+                <div class="carousel-item glass">
+                    <svg class="carousel-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0a815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    Calidad garantizada en todos nuestros productos
+                </div>
+                <div class="carousel-item glass">
+                    <svg class="carousel-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0a815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    Atención al cliente: +00 123 456 789
+                </div>
+                <div class="carousel-item glass">
+                    <svg class="carousel-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0a815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    Horario: Lunes a Sábado de 9:00 a 18:00
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SECCIÓN DE MENÚ (CATEGORÍAS Y PRODUCTOS) -->
+        <section id="menu" class="menu-section container">
+            <h2 class="section-title">Nuestros <span class="text-accent">Productos</span></h2>
+            
+            <div class="menu-layout">
+                <aside class="sidebar glass">
+                    <h3>Categorías</h3>
+                    <ul id="category-list" class="category-list">
+                        <li class="loading">Cargando categorías...</li>
+                    </ul>
+                </aside>
+
+                <div class="products-area">
+                    <div id="products-grid" class="products-grid">
+                        <p class="loading">Cargando productos desde la base de datos...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 5. SECCIÓN DE INFORMACIÓN (FOOTER) -->
+    <footer id="info" class="glass footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Big<span class="text-accent">Burger</span></h4>
+                <p>Tu mejor opción local para productos de calidad.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#menu">Productos</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p>📍 Dirección Local, Ciudad</p>
+                <p>📧 contacto@bigburger.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BigBurger. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- 6. MODAL DEL CARRITO -->
+    <div id="cart-modal" class="cart-modal hidden">
+        <div class="cart-content glass">
+            <div class="cart-header">
+                <h3>Tu Pedido</h3>
+                <button id="close-cart" class="close-btn" aria-label="Cerrar carrito">&times;</button>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <p class="empty-msg" style="text-align:center; padding: 20px; color: var(--text-muted);">El carrito está vacío.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">Total: <span id="cart-total-amount" class="text-accent">$0.00</span></div>
+                <button id="checkout-btn" class="btn-primary">Realizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
